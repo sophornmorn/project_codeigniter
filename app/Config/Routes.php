@@ -16,7 +16,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Peperoni');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -30,10 +30,13 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('signup', 'Peperino::showLoginForm');
-$routes->get('signin', 'Peperino::showRegisterForm');
-// $routes->match(['get','post'],'signin','Peperino::showRegisterForm');
 
+$routes->add('/', 'Peperoni::loginForm');
+$routes->add('signup', 'Peperoni::register');
+$routes->add('pizza', 'Peperoni::listPizza');
+$routes->add('signin', 'Peperoni::loginForm');
+$routes->add('delete/(:num)', 'Peperoni::deletePizza/$1');
+$routes->add('showadd', 'Peperoni::addPizza');
 /**
  * --------------------------------------------------------------------
  * Additional Routing

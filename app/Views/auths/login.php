@@ -7,7 +7,7 @@
     </div>
   </div>
   <div class="auth__body">
-    <form class="auth__form" autocomplete="off" action="/" method="post">
+    <form class="auth__form" autocomplete="off" action="/pizza" method="post">
       <div class="auth__form_body">
         <h3 class="auth__form_title">Peperoni App</h3>
         <div>
@@ -20,13 +20,14 @@
             <input type="password" class="form-control" placeholder="Password">
           </div>
         </div>
-      </div>
+      </div> 
+      
       <div class="auth__form_actions">
         <button class="btn btn-primary btn-lg btn-block">
           NEXT
         </button>
         <div class="mt-2">
-          <a href="/Preperino/" class="small text-uppercase">
+          <a href="/signup" class="small text-uppercase">
             CREATE ACCOUNT
           </a>
         </div>

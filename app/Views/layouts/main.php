@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-    <?= $this->include('layouts/navbar') ?>
     <?= $this->renderSection('content') ?>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>

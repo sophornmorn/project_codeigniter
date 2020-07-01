@@ -32,11 +32,16 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 $routes->add('/', 'Peperoni::loginForm');
-$routes->add('signup', 'Peperoni::register');
 $routes->add('pizza', 'Peperoni::listPizza');
 $routes->add('signin', 'Peperoni::loginForm');
+$routes->add('add', 'Peperoni::addPizza');
 $routes->add('delete/(:num)', 'Peperoni::deletePizza/$1');
-$routes->add('showadd', 'Peperoni::addPizza');
+$routes->add('edit', 'Peperoni::editPizza');
+
+//user pizza
+
+$routes->add('user', 'User::loginForm');
+$routes->add('register', 'User::register');
 /**
  * --------------------------------------------------------------------
  * Additional Routing

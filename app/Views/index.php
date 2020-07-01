@@ -24,12 +24,11 @@
 							<td ><?= $pizza['name']?></td>
 							<td ><?= $pizza['price']?></td>
 							<td><?= $pizza['ingredient']?></td>	
-							<td>
-								<a href="" data-toggle="modal" data-target="#updatePizza"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Pizza!" data-placement="left">edit</i></a>
+							<td>	
+								<a href="/edit/<?= $pizza['id']?>" data-toggle="modal" data-target="#updatePizza"><i class="material-icons text-info" data-toggle="tooltip" title="Edit Pizza!" data-placement="left">edit</i></a>
 								<a href="/delete/<?= $pizza['id']?>" data-toggle="tooltip" title="Delete Pizza!" data-placement="right"><i class="material-icons text-danger">delete</i></a>
 							</td>
 						</tr>
-
 					<?php endforeach;?>
 				</table>
 			</div>
@@ -52,15 +51,16 @@
         
         <!-- Modal body -->
         <div class="modal-body text-right">
-			<form  action="/showadd" method="post">
+			<form  action="/pizza" method="post">
+			<input type="hidden" name="update_id" id="update_id">
 				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Pizza name" id="name" name="name">
+					<input type="text" class="form-control" placeholder="Pizza name" id="updat_id" name="name">
 				</div>
 				<div class="form-group">
 					<input type="number" class="form-control" placeholder="Prize in dollars" id="price" name="price">
 				</div>
 				<div class="form-group">
-					<textarea name="" placeholder="Ingredients" class="form-control" id="indredient" name="indredient"></textarea>
+					<textarea name="indredient" placeholder="Ingredients" class="form-control" id="indredient" name="indredient"></textarea>
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;
@@ -86,19 +86,20 @@
         
         <!-- Modal body -->
         <div class="modal-body text-right">
-			<form  action="/" method="post">
+			<form  action="/pizza/edit" method="post">
 				<div class="form-group">
-					<input type="text" class="form-control" value="Rady Pizza">
+					<input type="text" class="form-control" value="<?= $pizza['name']?>" name="name">
 				</div>
 				<div class="form-group">
-					<input type="number" class="form-control" value="100">
+					<input type="number" class="form-control" value="<?= $pizza['price']?>" name="price">
 				</div>
 				<div class="form-group">
-					<textarea name=""  class="form-control">Cheese, Tomatoes, Chicken, Salad</textarea>
+					<textarea name="ingredient"  class="form-control"><?= $pizza['ingredient']?></textarea>
 				</div>
 			<a data-dismiss="modal" class="closeModal">DISCARD</a>
 		 	 &nbsp;
 		  <input type="submit" value="UPDATE" class="createBtn text-warning">
+
         </div>
         </form>
       </div>

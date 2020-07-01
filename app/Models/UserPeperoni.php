@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 
 class UserPeperoni extends Model
 {
-    protected $table      = 'menu_pizza';
+    protected $table      = 'pizza';
     protected $primaryKey = 'id';
 
     protected $returnType     = 'array';

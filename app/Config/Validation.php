@@ -1,6 +1,7 @@
 <?php namespace Config;
 
 class Validation
+
 {
 	//--------------------------------------------------------------------
 	// Setup
@@ -12,11 +13,12 @@ class Validation
 	 *
 	 * @var array
 	 */
-	public $ruleSets = [
+	public $ruleSets = [       
 		\CodeIgniter\Validation\Rules::class,
 		\CodeIgniter\Validation\FormatRules::class,
 		\CodeIgniter\Validation\FileRules::class,
 		\CodeIgniter\Validation\CreditCardRules::class,
+		\App\Validation\UserRules::class,
 	];
 
 	/**

@@ -29,7 +29,15 @@
                 <input type="checkbox" class="form-check-input" value="1" name="role">I'ma manager
             </label>
         </div>
-        
+
+        <?php if(isset($validation)):?>
+        <div class="col-12">
+            <div class="alert alert-danger" role ="alert">
+                <?= $validation->listErrors(); ?>
+            </div>
+        </div>
+        <?php endif; ?>
+
         </div>
       </div>
       <div class="auth__form_actions">

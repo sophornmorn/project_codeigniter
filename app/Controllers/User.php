@@ -8,10 +8,13 @@ class User extends BaseController
         helper(['form']);
 		$data = [];
 		if($this->request->getMethod() == "post"){
+
+            // set rule on field login form
 			$rules = [
 				'email' => 'required|valid_email',
 				'password' => 'required|validateUser[email,password]'
-			];
+            ];
+            //this message appea when email not much with data in database
 			$error = [
 				'password' => [
 					'validateUser' => 'password not match!!!'

@@ -1,6 +1,6 @@
 <?php namespace App\Controllers;
 use App\Models\UserPeperoni;
-class Peperoni extends BaseController
+class PizzaPeperoni extends BaseController
 {
 	public function listPizza()
 	{	

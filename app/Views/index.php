@@ -19,8 +19,9 @@
 						<th>Name</th>
 						<th>Price</th>
 						<th>Ingredients</th>
+						<?php if(session()->get('role') == 1):?>
 						<th>Status</th>
-						<th></th>
+						<?php endif ?>
 					</tr>
 					
 					<!-- echo value  -->
@@ -96,7 +97,7 @@
         
         <!-- Modal body -->
         <div class="modal-body text-right">
-			<form  action="peperoni/updatPizza" method="post">
+			<form  action="pizzapeperoni/updatPizza" method="post">
 
 				<div class="form-group">
 					<input type="hidden" class="form-control"  name="id" id="id">

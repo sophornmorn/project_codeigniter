@@ -46,8 +46,6 @@ class User extends BaseController
 		return true;
 	}
     
-
-
 // Register Form
 
     public function register(){

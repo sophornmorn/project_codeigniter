@@ -13,6 +13,7 @@
     <ul class="nav navbar-nav ml-auto">
       <li class="nav-item">
         <a class="nav-link text-uppercase" href="/signin">
+        <!-- split the head of email -->
           <?php $username = strstr(session()->get('email'),'@',true) ?>
               <?= $username ?>
           </a>

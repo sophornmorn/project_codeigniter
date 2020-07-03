@@ -10,7 +10,7 @@
     <form class="auth__form" autocomplete="off" action="/" method="post">
       <div class="auth__form_body">
         <h3 class="auth__form_title">Peperoni App</h3>
-
+        <!-- show success message -->
           <?php if(session()->get('success')) :?>
             <div class="alert alert-success" role="alert"> <?= session()->get('success') ?></div>
           <?php endif; ?>
@@ -24,7 +24,7 @@
             <label class="text-uppercase small">Password</label>
             <input type="password" class="form-control" placeholder="Password" name ="password" value="">
           </div>
-
+        <!-- show error message -->
           <?php if(isset($message)) :?>
           <div class="col-12">
             <div class="alert alert-danger" role="alert">

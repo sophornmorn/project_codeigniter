@@ -8,6 +8,7 @@ class Peperoni extends BaseController
 		$allPizza['pizzaData'] = $peperoni->findAll();
 		return view('index',$allPizza);
 	}
+	// add pizza list
 	public function addPizza()
 	{	
 		helper(['form']);
@@ -20,12 +21,10 @@ class Peperoni extends BaseController
 					'name' => $this->request->getVar('name'),
 					'price' => $this->request->getVar('price'),
 					'ingredient' => $this->request->getVar('ingredient')
-					
 				];
 
 				$peperoni->save($newData);
 				return redirect()->to('pizza');
-			
 		}
 		
 	}
@@ -36,14 +35,14 @@ class Peperoni extends BaseController
 		$data['edit']= $peperoni->find($id);
 		return view('edit',$data);
 	}
-
+	// update pizza list
    public function updatPizza()
 	{	
 		$peperoni = new UserPeperoni();
 		$peperoni->update($_POST['id'],$_POST);
 		return redirect()->to('/pizza');
 	}
-
+	// delete pizza list
 	public function deletePizza($id)
 	{	
 		$peperoni = new UserPeperoni();

@@ -40,6 +40,7 @@ $routes->get('edit/(:num)','Peperoni::editPizza/$1');
 
 $routes->add('/', 'User::loginForm');
 $routes->add('register', 'User::register');
+$routes->add('signin', 'User::loginForm');
 /**
  * --------------------------------------------------------------------
  * Additional Routing
